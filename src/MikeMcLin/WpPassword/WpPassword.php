@@ -1,5 +1,7 @@
 <?php namespace MikeMcLin\WpPassword;
 
+use Hautelook\Phpass\PasswordHash;
+
 class WpPassword {
 
     public static $wp_hasher;
