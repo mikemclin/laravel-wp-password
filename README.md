@@ -1,4 +1,4 @@
-This Laravel 4 package provides an easy way to create and check against WordPress password hashes.
+This Laravel 4 package provides an easy way to create and check against WordPress password hashes. WordPress is not required.
 
 
 Installation
@@ -33,11 +33,15 @@ Usage
 
 ### Create Password Hash
 
+Similar to the WordPress [`wp_hash_password()`](http://codex.wordpress.org/Function_Reference/wp_hash_password) function
+
 ```php
 $hashed_password = WpPassword::createHash('plain-text-password');
 ```
 
 ### Check Password Hash
+
+Similar to the WordPress [`wp_check_password()`](http://codex.wordpress.org/Function_Reference/wp_check_password) function
 
 ```php
 $password = 'plain-text-password';
