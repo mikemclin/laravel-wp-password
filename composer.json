@@ -1,12 +1,21 @@
 {
     "name": "mikemclin/wp-password",
-    "description": "",
+    "description": "Laravel package that checks and creates WordPress password hashes",
+    "version": "0.0.1",
+    "type": "laravel-package",
+    "keywords": ["laravel", "wordpress", "password", "hashing"],
+    "homepage": "https://github.com/mikemclin/laravel-wp-password",
+    "license": "MIT",
     "authors": [
         {
             "name": "Mike McLin",
-            "email": "mike@mikemclin.com"
+            "email": "mike@mikemclin.com",
+            "homepage": "http://mikemclin.net",
         }
     ],
+    "support": {
+        "issues": "https://github.com/mikemclin/laravel-wp-password/issues",
+    },
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.1.*",
