@@ -36,7 +36,7 @@ Usage
 Similar to the WordPress [`wp_hash_password()`](http://codex.wordpress.org/Function_Reference/wp_hash_password) function
 
 ```php
-$hashed_password = WpPassword::createHash('plain-text-password');
+$hashed_password = WpPassword::make('plain-text-password');
 ```
 
 ### Check Password Hash
@@ -47,7 +47,7 @@ Similar to the WordPress [`wp_check_password()`](http://codex.wordpress.org/Func
 $password = 'plain-text-password';
 $wp_hashed_password = '$P$B7TRc6vrwCfjgKLZLgmN.dmPo6msZR.';
 
-if ( WpPassword::checkPassword($password, $wp_hashed_password) ) {
+if ( WpPassword::check($password, $wp_hashed_password) ) {
     // Password success!
 } else {
     // Password failed :(

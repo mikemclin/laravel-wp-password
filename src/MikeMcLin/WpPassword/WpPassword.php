@@ -33,7 +33,7 @@ class WpPassword {
      * @param string $password Plain text user password to hash
      * @return string The hash string of the password
      */
-    static public function hashPassword($password)
+    static public function make($password)
     {
 
         return static::wpHasher()->HashPassword(trim($password));
@@ -54,7 +54,7 @@ class WpPassword {
      * @param string $hash Hash of the user's password to check against.
      * @return bool False, if the $password does not match the hashed password
      */
-    static public function checkPassword($password, $hash)
+    static public function check($password, $hash)
     {
 
         // If the hash is still md5...
