@@ -8,7 +8,6 @@ Begin by installing this package through Composer. Edit your project's `composer
 
 ```json
 "require": {
-  "laravel/framework": "4.1.*",
   "mikemclin/wp-password": "dev-master"
 },
 "minimum-stability" : "dev"
