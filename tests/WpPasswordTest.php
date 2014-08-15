@@ -42,7 +42,7 @@ class WpPasswordTest extends PHPUnit_Framework_TestCase
         $wp_hasher = Mockery::mock('Hautelook\Phpass\PasswordHash');
         $wp_hasher->shouldReceive('HashPassword')
             ->once()
-            ->withArgs(['foo'])
+            ->withArgs(array('foo'))
             ->andReturn('bar');
 
         WpPassword::getInstance($wp_hasher);
@@ -57,7 +57,7 @@ class WpPasswordTest extends PHPUnit_Framework_TestCase
         $wp_hasher = Mockery::mock('Hautelook\Phpass\PasswordHash');
         $wp_hasher->shouldReceive('HashPassword')
             ->once()
-            ->withArgs(['foo']);
+            ->withArgs(array('foo'));
 
         WpPassword::getInstance($wp_hasher);
 
@@ -69,7 +69,7 @@ class WpPasswordTest extends PHPUnit_Framework_TestCase
         $wp_hasher = Mockery::mock('Hautelook\Phpass\PasswordHash');
         $wp_hasher->shouldReceive('CheckPassword')
             ->once()
-            ->withArgs(['plain-text-password', 'hashed-password-longer-than-32-chars'])
+            ->withArgs(array('plain-text-password', 'hashed-password-longer-than-32-chars'))
             ->andReturn('foo');
 
         WpPassword::getInstance($wp_hasher);
