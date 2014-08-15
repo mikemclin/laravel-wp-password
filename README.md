@@ -9,8 +9,7 @@ Begin by installing this package through Composer. Edit your project's `composer
 ```json
 "require": {
   "mikemclin/wp-password": "dev-master"
-},
-"minimum-stability" : "dev"
+}
 ```
 
 
