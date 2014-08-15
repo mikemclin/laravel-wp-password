@@ -32,6 +32,5 @@
         "psr-0": {
             "MikeMcLin\\WpPassword\\": "src/"
         }
-    },
-    "minimum-stability": "dev"
+    }
 }
