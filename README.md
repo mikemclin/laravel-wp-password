@@ -1,3 +1,8 @@
+Laravel WP Password
+===================
+
+[![Build Status](https://img.shields.io/travis/mikemclin/laravel-wp-password/master.svg?style=flat-square)](https://travis-ci.org/mikemclin/laravel-wp-password)
+
 This Laravel 4 package provides an easy way to create and check against WordPress password hashes. WordPress is not required.
 
 
