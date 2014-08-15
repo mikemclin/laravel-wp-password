@@ -4,22 +4,37 @@ use Hautelook\Phpass\PasswordHash;
 
 class WpPassword {
 
-    public static $wp_hasher;
+    protected $wp_hasher;
 
     /**
-     * Create and return a new instance of PasswordHash
+     * Protected constructor to prevent creating a new instance of the
+     * singleton via the `new` operator from outside of this class
      *
-     * @return object PasswordHash
+     * @param PasswordHash $wp_hasher
      */
-    public static function wpHasher()
+    protected function __construct($wp_hasher)
     {
+        $this->wp_hasher = $wp_hasher;
+    }
 
-        if ( ! (static::$wp_hasher instanceof PasswordHash) ) {
-            static::$wp_hasher = new PasswordHash(8, true);
+    /**
+     * Returns singleton instance of class
+     *
+     * @param $wp_hasher
+     *
+     * @return static
+     */
+    public static function getInstance($wp_hasher = null)
+    {
+        static $instance = null;
+        if (null === $instance || $wp_hasher instanceof PasswordHash) {
+            if(!$wp_hasher instanceof PasswordHash){
+                $wp_hasher = new PasswordHash(8, true);
+            }
+            $instance = new static($wp_hasher);
         }
 
-        return static::$wp_hasher;
-
+        return $instance;
     }
 
     /**
@@ -36,7 +51,7 @@ class WpPassword {
     static public function make($password)
     {
 
-        return static::wpHasher()->HashPassword(trim($password));
+        return static::getInstance()->wp_hasher->HashPassword(trim($password));
 
     }
 
@@ -64,7 +79,7 @@ class WpPassword {
 
         // If the stored hash is longer than an MD5, presume the
         // new style phpass portable hash.
-        return static::wpHasher()->CheckPassword($password, $hash);
+        return static::getInstance()->wp_hasher->CheckPassword($password, $hash);
 
     }
 
