@@ -9,3 +9,5 @@ before_script:
   - php composer.phar install --dev
 
 script: phpunit
+
+after_script: php vendor/bin/coveralls
