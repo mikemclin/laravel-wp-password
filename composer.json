@@ -1,7 +1,7 @@
 {
     "name": "mikemclin/laravel-wp-password",
     "description": "Laravel package that checks and creates WordPress password hashes",
-    "version": "0.1.1",
+    "version": "1.0.0",
     "type": "laravel-package",
     "keywords": ["laravel", "wordpress", "password", "hashing"],
     "homepage": "https://github.com/mikemclin/laravel-wp-password",
