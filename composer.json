@@ -33,7 +33,7 @@
   },
   "autoload": {
     "psr-4": {
-      "MikeMcLin\\WpPassword\\": "src/"
+      "MikeMcLin\\": "src/"
     }
   },
   "replace": {

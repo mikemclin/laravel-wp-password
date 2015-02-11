@@ -1,40 +1,22 @@
-<?php namespace MikeMcLin\WpPassword;
+<?php namespace MikeMcLin\Services;
 
 use Hautelook\Phpass\PasswordHash;
+use MikeMcLin\Contracts\WpPassword as WpPasswordContract;
 
-class WpPassword {
+class WpPassword implements WpPasswordContract
+{
 
+    /**
+     * @var \Hautelook\Phpass\PasswordHash
+     */
     protected $wp_hasher;
 
     /**
-     * Protected constructor to prevent creating a new instance of the
-     * singleton via the `new` operator from outside of this class
-     *
-     * @param PasswordHash $wp_hasher
+     * @param \Hautelook\Phpass\PasswordHash $wp_hasher
      */
-    protected function __construct($wp_hasher)
+    function __construct(PasswordHash $wp_hasher)
     {
         $this->wp_hasher = $wp_hasher;
-    }
-
-    /**
-     * Returns singleton instance of class
-     *
-     * @param $wp_hasher
-     *
-     * @return static
-     */
-    public static function getInstance($wp_hasher = null)
-    {
-        static $instance = null;
-        if (null === $instance || $wp_hasher instanceof PasswordHash) {
-            if(!$wp_hasher instanceof PasswordHash){
-                $wp_hasher = new PasswordHash(8, true);
-            }
-            $instance = new static($wp_hasher);
-        }
-
-        return $instance;
     }
 
     /**
@@ -46,13 +28,12 @@ class WpPassword {
      * @uses PasswordHash::HashPassword
      *
      * @param string $password Plain text user password to hash
+     *
      * @return string The hash string of the password
      */
-    static public function make($password)
+    public function make($password)
     {
-
-        return static::getInstance()->wp_hasher->HashPassword(trim($password));
-
+        return $this->wp_hasher->HashPassword(trim($password));
     }
 
     /**
@@ -66,21 +47,20 @@ class WpPassword {
      * @uses PasswordHash::CheckPassword
      *
      * @param string $password Plaintext user's password
-     * @param string $hash Hash of the user's password to check against.
+     * @param string $hash     Hash of the user's password to check against.
+     *
      * @return bool False, if the $password does not match the hashed password
      */
-    static public function check($password, $hash)
+    public function check($password, $hash)
     {
-
         // If the hash is still md5...
-        if ( strlen($hash) <= 32 ) {
-            return ( $hash == md5($password) );
+        if (strlen($hash) <= 32) {
+            return ($hash == md5($password));
         }
 
         // If the stored hash is longer than an MD5, presume the
         // new style phpass portable hash.
-        return static::getInstance()->wp_hasher->CheckPassword($password, $hash);
-
+        return $this->wp_hasher->CheckPassword($password, $hash);
     }
 
 }
