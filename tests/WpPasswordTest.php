@@ -21,7 +21,7 @@ class WpPasswordTest extends PHPUnit_Framework_TestCase
 
     public function test_service_implements_interface()
     {
-        $this->assertInstanceOf('MikeMcLin\Contracts\WpPassword', $this->$wp_password);
+        $this->assertInstanceOf('MikeMcLin\WpPassword\Contracts\WpPassword', $this->wp_password);
     }
 
     public function test_make_method_calls_HashPassword_and_returns_result()
