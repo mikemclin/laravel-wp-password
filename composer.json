@@ -1,7 +1,7 @@
 {
   "name": "mikemclin/laravel-wp-password",
   "description": "Laravel package that checks and creates WordPress password hashes",
-  "version": "1.0.0",
+  "version": "2.0.0-alpha.1",
   "type": "laravel-package",
   "keywords": [
     "laravel",
@@ -33,7 +33,7 @@
   },
   "autoload": {
     "psr-4": {
-      "MikeMcLin\\": "src/"
+      "MikeMcLin\\WpPassword\\": "src/"
     }
   },
   "replace": {

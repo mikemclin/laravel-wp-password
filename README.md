@@ -4,20 +4,21 @@ Laravel WP Password
 [![Build Status](https://img.shields.io/travis/mikemclin/laravel-wp-password/master.svg?style=flat-square)](https://travis-ci.org/mikemclin/laravel-wp-password)
 [![Coverage Status](https://img.shields.io/coveralls/mikemclin/laravel-wp-password/master.svg?style=flat-square)](https://coveralls.io/r/mikemclin/laravel-wp-password?branch=master)
 
-This Laravel 4 package provides an easy way to create and check against WordPress password hashes. WordPress is not required.
+This Laravel 4/5 package provides an easy way to create and check against WordPress password hashes. WordPress is not required.
 
 
 Installation
 ------------
 
-Begin by installing this package through Composer. Edit your project's `composer.json` file to require `mikemclin/wp-password`.
+### Step 1: Composer
+
+Begin by installing this package through Composer. Edit your project's `composer.json` file to require `mikemclin/laravel-wp-password`.
 
 ```json
 "require": {
-  "mikemclin/laravel-wp-password": "dev-master"
+  "mikemclin/laravel-wp-password": "~2.0.0"
 }
 ```
-
 
 Next, update Composer from the Terminal:
 
@@ -25,15 +26,22 @@ Next, update Composer from the Terminal:
 composer update
 ```
 
-Once this operation completes, the final step is to add the service provider. Open `app/config/app.php`, and add a new item to the providers array.
+### Step 2: Register Laravel Service Provider
+
+Once this operation completes, the final step is to add the service provider.
+
+* **Laravel 5.x**: Open `config/app.php`, and add a new item to the providers array
+* **Laravel 4.x**: Open `app/config/app.php`, and add a new item to the providers array
 
 ```php
-'MikeMcLin\WpPassword\WpPasswordServiceProvider'
+'MikeMcLin\WpPassword\WpPasswordProvider'
 ```
 
 
 Usage
 -----
+
+Add a _use statement_ for the WpPassword Facade: `use MikeMcLin\WpPassword\Facades\WpPassword;`
 
 ### Create Password Hash
 

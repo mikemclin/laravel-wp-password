@@ -1,6 +1,6 @@
 <?php
 
-use MikeMcLin\Services\WpPassword as WpPasswordService;
+use MikeMcLin\WpPassword\WpPassword;
 
 class WpPasswordTest extends PHPUnit_Framework_TestCase
 {
@@ -11,7 +11,7 @@ class WpPasswordTest extends PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->password_hash_mock = Mockery::mock('Hautelook\Phpass\PasswordHash');
-        $this->wp_password = new WpPasswordService($this->password_hash_mock);
+        $this->wp_password = new WpPassword($this->password_hash_mock);
     }
 
     public function tearDown()

@@ -1,7 +1,7 @@
-<?php namespace MikeMcLin\Services;
+<?php namespace MikeMcLin\WpPassword;
 
 use Hautelook\Phpass\PasswordHash;
-use MikeMcLin\Contracts\WpPassword as WpPasswordContract;
+use MikeMcLin\WpPassword\Contracts\WpPassword as WpPasswordContract;
 
 class WpPassword implements WpPasswordContract
 {

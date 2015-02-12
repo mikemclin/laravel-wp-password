@@ -1,4 +1,4 @@
-<?php namespace MikeMcLin\Contracts;
+<?php namespace MikeMcLin\WpPassword\Contracts;
 
 interface WpPassword
 {
