@@ -41,7 +41,11 @@ Once this operation completes, the final step is to add the service provider.
 Usage
 -----
 
-Add a _use statement_ for the WpPassword Facade: `use MikeMcLin\WpPassword\Facades\WpPassword;`
+Add a _use statement_ for the WpPassword Facade
+
+```php
+use MikeMcLin\WpPassword\Facades\WpPassword;
+```
 
 ### Create Password Hash
 
