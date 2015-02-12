@@ -10,7 +10,7 @@ This Laravel 4/5 package provides an easy way to create and check against WordPr
 Installation
 ------------
 
-### Step 1: Composer
+#### Step 1: Composer
 
 Begin by installing this package through Composer. Edit your project's `composer.json` file to require `mikemclin/laravel-wp-password`.
 
@@ -26,7 +26,7 @@ Next, update Composer from the Terminal:
 composer update
 ```
 
-### Step 2: Register Laravel Service Provider
+#### Step 2: Register Laravel Service Provider
 
 Once this operation completes, the final step is to add the service provider.
 
