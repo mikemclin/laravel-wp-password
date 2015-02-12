@@ -47,7 +47,7 @@ Add a _use statement_ for the WpPassword Facade
 use MikeMcLin\WpPassword\Facades\WpPassword;
 ```
 
-### Create Password Hash
+### `make()` - Create Password Hash
 
 Similar to the WordPress [`wp_hash_password()`](http://codex.wordpress.org/Function_Reference/wp_hash_password) function
 
@@ -55,7 +55,7 @@ Similar to the WordPress [`wp_hash_password()`](http://codex.wordpress.org/Funct
 $hashed_password = WpPassword::make('plain-text-password');
 ```
 
-### Check Password Hash
+### `check()` - Check Password Hash
 
 Similar to the WordPress [`wp_check_password()`](http://codex.wordpress.org/Function_Reference/wp_check_password) function
 
@@ -69,3 +69,7 @@ if ( WpPassword::check($password, $wp_hashed_password) ) {
     // Password failed :(
 }
 ```
+
+### Dependency Injection
+
+I used a facade above to simplify the documentation.  If you'd prefer not to use the facade, you can inject the following interface: `MikeMcLin\WpPassword\Contracts\WpPassword`.
