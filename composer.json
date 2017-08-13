@@ -38,5 +38,15 @@
   },
   "replace": {
     "mikemclin/laravel-wp-password": "self.version"
+  },
+  "extra": {
+      "laravel": {
+          "providers": [
+            "MikeMcLin\\WpPassword\\WpPasswordProvider"
+          ],
+          "aliases": {
+            "WpPassword": "MikeMcLin\\WpPassword\\Facades\\WpPassword"
+          }
+      }
   }
 }
