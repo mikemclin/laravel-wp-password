@@ -16,7 +16,7 @@ Begin by installing this package through Composer. Edit your project's `composer
 
 ```json
 "require": {
-  "mikemclin/laravel-wp-password": "~2.0.0"
+  "mikemclin/laravel-wp-password": "~2.0.1"
 }
 ```
 
